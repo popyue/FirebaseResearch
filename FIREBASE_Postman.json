@@ -1,0 +1,231 @@
+{
+  "info": {
+    "name": "FIREBASE",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Bucket Storage Public Access",
+      "event": [],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "key": "token",
+            "value": "{{API_KEY}}",
+            "type": "string"
+          }
+        },
+        "description": "",
+        "url": {
+          "raw": "https://firebasestorage.googleapis.com/v0/b/point-app-internal.appspot.com/o?maxResults=100",
+          "protocol": "https",
+          "host": [
+            "firebasestorage",
+            "googleapis",
+            "com"
+          ],
+          "path": [
+            "v0",
+            "b",
+            "point-app-internal.appspot.com",
+            "o"
+          ],
+          "query": [
+            {
+              "key": "maxResults",
+              "value": "100"
+            }
+          ],
+          "variable": []
+        }
+      }
+    },
+    {
+      "name": "Fetch FireBase RemoteConfig",
+      "event": [],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "auth": null,
+        "description": "",
+        "url": {
+          "raw": "https://firebaseremoteconfig.googleapis.com/v1/projects/{{PROJECTNAME}}/namespaces/firebase:fetch?key={{API_KEY}}",
+          "protocol": "https",
+          "host": [
+            "firebaseremoteconfig",
+            "googleapis",
+            "com"
+          ],
+          "path": [
+            "v1",
+            "projects",
+            "{{PROJECTNAME}}",
+            "namespaces",
+            "firebase:fetch"
+          ],
+          "query": [
+            {
+              "key": "key",
+              "value": "{{API_KEY}}"
+            }
+          ],
+          "variable": []
+        }
+      }
+    },
+    {
+      "name": "RemoteConfig2",
+      "event": [],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "{{PROJECTNAME}}",
+            "disabled": false,
+            "type": "default"
+          }
+        ],
+        "auth": {
+          "type": "bearer",
+          "bearer": {
+            "key": "token",
+            "value": "{{API_KEY}}",
+            "type": "string"
+          }
+        },
+        "description": "",
+        "url": {
+          "raw": "https://firebaseremoteconfig.googleapis.com/v1/projects/{{PROJECTNAME}}/remoteConfig",
+          "protocol": "https",
+          "host": [
+            "firebaseremoteconfig",
+            "googleapis",
+            "com"
+          ],
+          "path": [
+            "v1",
+            "projects",
+            "{{PROJECTNAME}}",
+            "remoteConfig"
+          ],
+          "query": [],
+          "variable": []
+        }
+      }
+    },
+    {
+      "name": "User_Registration_v1",
+      "event": [],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "disabled": false,
+            "type": "default"
+          }
+        ],
+        "auth": null,
+        "description": "",
+        "url": {
+          "raw": "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key={{API_KEY}}",
+          "protocol": "https",
+          "host": [
+            "identitytoolkit",
+            "googleapis",
+            "com"
+          ],
+          "path": [
+            "v1",
+            "accounts:signUp"
+          ],
+          "query": [
+            {
+              "key": "key",
+              "value": "{{API_KEY}}"
+            }
+          ],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"email\": \"falcon@example.com\",\n    \"password\": \"fa1conf0undthi5vu1ner46i1ity\",\n    \"returnSecureToken\": true\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "User_Registration_v3",
+      "event": [],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "disabled": false,
+            "type": "default"
+          }
+        ],
+        "auth": null,
+        "description": "",
+        "url": {
+          "raw": "https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key={{API_KEY}}",
+          "protocol": "https",
+          "host": [
+            "www",
+            "googleapis",
+            "com"
+          ],
+          "path": [
+            "identitytoolkit",
+            "v3",
+            "relyingparty",
+            "signupNewUser"
+          ],
+          "query": [
+            {
+              "key": "key",
+              "value": "{{API_KEY}}"
+            }
+          ],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"email\": \"leo@example.com\",\n    \"password\": \"leo123456\",\n    \"returnSecureToken\": true\n}\n ",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "bruno",
+      "event": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "API_KEY",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "PROJECTNAME",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}

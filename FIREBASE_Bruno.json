@@ -1,0 +1,206 @@
+{
+  "name": "FIREBASE",
+  "version": "1",
+  "items": [
+    {
+      "type": "http",
+      "name": "Bucket Storage Public Access",
+      "seq": 3,
+      "request": {
+        "url": "https://firebasestorage.googleapis.com/v0/b/point-app-internal.appspot.com/o?maxResults=100",
+        "method": "GET",
+        "headers": [],
+        "params": [
+          {
+            "name": "maxResults",
+            "value": "100",
+            "type": "query",
+            "enabled": true
+          }
+        ],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "bearer",
+          "bearer": {
+            "token": "{{API_KEY}}"
+          }
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "Fetch FireBase RemoteConfig",
+      "seq": 2,
+      "request": {
+        "url": "https://firebaseremoteconfig.googleapis.com/v1/projects/{{PROJECTNAME}}/namespaces/firebase:fetch?key={{API_KEY}}",
+        "method": "GET",
+        "headers": [],
+        "params": [
+          {
+            "name": "key",
+            "value": "{{API_KEY}}",
+            "type": "query",
+            "enabled": true
+          }
+        ],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "RemoteConfig2",
+      "seq": 6,
+      "request": {
+        "url": "https://firebaseremoteconfig.googleapis.com/v1/projects/{{PROJECTNAME}}/remoteConfig",
+        "method": "GET",
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "{{PROJECTNAME}}",
+            "enabled": true
+          }
+        ],
+        "params": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "bearer",
+          "bearer": {
+            "token": "{{API_KEY}}"
+          }
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "User_Registration_v1",
+      "seq": 4,
+      "request": {
+        "url": "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key={{API_KEY}}",
+        "method": "POST",
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          }
+        ],
+        "params": [
+          {
+            "name": "key",
+            "value": "{{API_KEY}}",
+            "type": "query",
+            "enabled": true
+          }
+        ],
+        "body": {
+          "mode": "json",
+          "json": "{\n    \"email\": \"falcon@example.com\",\n    \"password\": \"fa1conf0undthi5vu1ner46i1ity\",\n    \"returnSecureToken\": true\n}",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "User_Registration_v3",
+      "seq": 5,
+      "request": {
+        "url": "https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key={{API_KEY}}",
+        "method": "POST",
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          }
+        ],
+        "params": [
+          {
+            "name": "key",
+            "value": "{{API_KEY}}",
+            "type": "query",
+            "enabled": true
+          }
+        ],
+        "body": {
+          "mode": "json",
+          "json": "{\n    \"email\": \"leo@example.com\",\n    \"password\": \"leo123456\",\n    \"returnSecureToken\": true\n}\n ",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    }
+  ],
+  "activeEnvironmentUid": "mkZKCzKFnt63fAEBCF77B",
+  "environments": [
+    {
+      "variables": [
+        {
+          "name": "API_KEY",
+          "value": "AIzaSyBtU_JOLamxrKmyBZ_Mnyuo5gUpmmBAPKI",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        },
+        {
+          "name": "PROJECTNAME",
+          "value": "ebates-ios",
+          "enabled": true,
+          "secret": false,
+          "type": "text"
+        }
+      ],
+      "name": "firebase"
+    }
+  ],
+  "brunoConfig": {
+    "version": "1",
+    "name": "FIREBASE",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ]
+  }
+}
